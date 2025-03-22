@@ -5,6 +5,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +23,9 @@ public class CartRestController {
 	String info;
 	
 	@GetMapping("/cart")
-	public ResponseEntity<String> getMethodName() {
+	public ResponseEntity<String> getMethodName(@RequestHeader String TOKENUUID) {
 		
-		return new ResponseEntity<String>("Product => cart details...."+portNo+" config server details: "+info, HttpStatus.OK);
+		return new ResponseEntity<String>(" config server details: "+info+ "TOKENUUID request prefilter"+ TOKENUUID+" Product => cart details...."+portNo, HttpStatus.OK);
 				
 	}
 	

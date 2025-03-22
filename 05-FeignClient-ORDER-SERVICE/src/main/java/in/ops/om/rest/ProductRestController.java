@@ -11,7 +11,7 @@ import in.ops.om.consumer.ICustomerOrder;
 
 
 @RestController
-@RequestMapping("v1/api/product")
+@RequestMapping("v1/api/order")
 public class ProductRestController {
 	
 	@Autowired
